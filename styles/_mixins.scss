@@ -1,0 +1,70 @@
+@use 'sass:math';
+
+@mixin fluid-text($max, $min) {
+  $x1: $min-width;
+  $x2: $max-width;
+  
+  $xdiff: $x2 - $x1;
+  $ydiff: $max - $min;
+
+  $a: math.div($ydiff, $xdiff);
+  $b: $min - $x1 * math.div($ydiff, $xdiff);
+  $x: 100vw;
+
+  font-size: clamp(#{$min}px, $a * $x + #{$b}px, #{$max}px);
+}
+
+@mixin reset-link {
+  color: inherit;
+
+  &,
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+a {
+  @include reset-link();
+}
+
+@mixin reset-button {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+}
+
+@mixin flex-center($isInline: false) {
+  @if $isInline {
+    display: inline-flex;
+  } @else {
+    display: flex;
+  }
+
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+}
+
+@mixin square($size) {
+  width: #{$size}px;
+  aspect-ratio: 1;
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}

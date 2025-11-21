@@ -1,0 +1,37 @@
+@import 
+  'normalize', 
+  'media', 
+  'mixins', 
+  'variables', 
+  'fonts', 
+  'utils', 
+  'globals';
+
+@import
+  'blocks/button',
+  'blocks/radio',
+  'blocks/radios',
+  'blocks/field',
+  'blocks/grid',
+  'blocks/burger-button',
+  'blocks/header',
+  'blocks/cross-button',
+  'blocks/mobile-overlay',
+  'blocks/section',
+  'blocks/hero',
+  'blocks/highlight-bg',
+  'blocks/services',
+  'blocks/service-card',
+  'blocks/banner',
+  'blocks/studies',
+  'blocks/process',
+  'blocks/team',
+  'blocks/team-card',
+  'blocks/pagination',
+  'blocks/reviews',
+  'blocks/review-card',
+  'blocks/contact-us',
+  'blocks/footer',
+  'blocks/subscribe-form',
+  'blocks/social'
+  ;

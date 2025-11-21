@@ -1,0 +1,16 @@
+.burger-button {
+  @include reset-button();
+  @include square(48);
+  line-height: 0;
+
+  border-radius: var(--border-radius-s);
+
+  & > svg {
+    margin-inline: auto;
+    stroke: currentColor;
+  }
+
+  @include hover() {
+    background-color: var(--color-accent);
+  }
+}

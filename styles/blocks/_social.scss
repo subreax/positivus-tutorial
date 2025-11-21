@@ -1,0 +1,14 @@
+.social {
+  @include flex-center;
+  @include square(30);
+
+  color: var(--color-light);
+
+  @include hover {
+    color: var(--color-accent);
+  }
+  
+  svg {
+    fill: var(--color-dark);
+  }
+}

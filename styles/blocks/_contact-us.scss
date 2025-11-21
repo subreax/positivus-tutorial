@@ -1,0 +1,70 @@
+@mixin contactUsBg($paddings) {
+  padding: #{$paddings};
+  background-color: var(--color-gray);
+  border-radius: var(--border-radius-l);
+}
+
+.contact-us {
+  --contactUsImagePaddingY: 62px;
+
+  @include tablet-above {
+    @include contactUsBg(60px 100px 80px);
+  }
+
+  position: relative;
+  overflow-x: hidden;
+
+  &__form,
+  &__mobile-container,
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__form,
+  &__mobile-container {
+    row-gap: 40px;
+
+    @include tablet-above {
+      max-width: 556px;
+    }
+    @include tablet {
+      row-gap: 30px;
+    }
+  }
+
+  &__mobile-container {
+    @include tablet {
+      @include contactUsBg(40px 30px);
+    }
+  }
+
+  &__request-types {
+    @include tablet {
+      margin-inline: auto;
+    }
+  }
+
+  &__body {
+    row-gap: 25px;
+    @include mobile {
+      row-gap: 20px;
+      padding: 10px 0;
+    }
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    height: calc(100% - var(--contactUsImagePaddingY)*2);
+    aspect-ratio: 1;
+    top: 50%;
+    left: calc(100% - 18px);
+    translate: -50% -50%;
+    background: url('/images/contact-us-bg.svg') center / contain no-repeat;
+
+    @include tablet {
+      display: none;
+    }
+  }
+}

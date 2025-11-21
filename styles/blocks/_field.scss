@@ -1,0 +1,63 @@
+.field {
+  --fieldPaddingX: 30px;
+  --fieldInputHeight: var(--input-height);
+  --fieldInputColor: var(--color-dark);
+  --fieldInputBgColor: var(--color-light);
+  --fieldInputPlaceholderColor: var(--color-gray-alt);
+  --fieldInputFocusedColor: var(--color-dark);
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: 5px;
+
+  @include mobile {
+    --fieldPaddingX: 20px;
+
+    row-gap: 10px;
+  }
+
+  &--tall {
+    --fieldInputHeight: 67px;
+  }
+
+  &--outlined {
+    --fieldInputColor: var(--color-light);
+    --fieldInputBgColor: transparent;
+    --fieldInputPlaceholderColor: var(--color-gray-alt);
+    --fieldInputFocusedColor: var(--color-accent);
+  }
+
+  &__label {
+    @include fluid-text(16, 14);
+  }
+
+  &__input {
+    @include fluid-text(18, 16);
+
+    width: 100%;
+    color: var(--fieldInputColor);
+    background-color: var(--fieldInputBgColor);
+    border: 1px solid var(--fieldInputColor);
+    border-radius: var(--border-radius);
+    height: var(--fieldInputHeight);
+    padding-inline: var(--fieldPaddingX);
+
+    &:focus {
+      outline-color: var(--fieldInputFocusedColor);
+    }
+
+    &::placeholder {
+      color: var(--fieldInputPlaceholderColor);
+    }
+
+    &--textarea {
+      padding: 18px var(--fieldPaddingX);
+      resize: none;
+      min-height: 11em;
+      @include mobile {
+        min-height: 7em;
+      }
+    }
+  }
+}

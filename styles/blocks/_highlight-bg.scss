@@ -1,0 +1,14 @@
+.highlight-bg {
+  padding-inline: 7px;
+  border-radius: var(--border-radius-s);
+  text-wrap: nowrap;
+
+  &--accent {
+    background-color: var(--color-accent);
+  }
+
+  &--light {
+    color: var(--color-dark);
+    background-color: var(--color-light);
+  }
+}

@@ -1,0 +1,156 @@
+.footer {
+  padding: 55px 60px 50px;
+  color: var(--color-light);
+  background-color: var(--color-dark);
+  border-top-left-radius: var(--border-radius-l);
+  border-top-right-radius: var(--border-radius-l);
+
+  @include tablet {
+    padding: 50px 40px 40px;
+  }
+  
+  @include mobile {
+    padding: 50px 20px 30px;
+    border-radius: 0;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    column-gap: 50px;
+    row-gap: 66px;
+
+    padding-bottom: 50px;
+    border-bottom: 1px solid var(--color-light);
+    margin-bottom: 50px;
+
+    @include tablet {
+      row-gap: 37px;
+      column-gap: 30px;
+    }
+
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+
+  &__logo {
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      width: fit-content;
+    }
+  }
+
+  &__nav {
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 40px;
+      text-decoration: underline;
+
+      @include tablet {
+        width: 100%;
+      }
+
+      @include mobile {
+        flex-direction: column;
+        text-decoration: none;
+      }
+    }
+
+    &-link {
+      display: block;
+      padding-block: 20px;
+      position: relative;
+
+      @include mobile {
+        padding-block: 7px;
+      }
+
+      @include hover {
+        color: var(--color-accent);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  &__socials {
+    @include mobile {
+      order: 4;
+    }
+
+    &-list {
+      display: flex;
+      align-items: center;
+      column-gap: 20px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    row-gap: 27px;
+
+    @include mobile {
+      align-items: center;
+      row-gap: 37px;
+    }
+
+    &-title {
+      color: var(--color-dark);
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      font-style: normal;
+
+      @include mobile {
+        align-items: center;
+        text-align: center;
+      }
+
+      p {
+        --paragraphMarginBottom: 20px;
+      }
+
+      a {
+        @include hover {
+          color: var(--color-accent);
+        }
+      }
+    }
+  }
+
+  &__subscribe-form {
+    width: 100%;
+  }
+
+  &__extra {
+    display: flex;
+    align-items: center;
+    column-gap: 40px;
+
+    @include mobile {
+      flex-direction: column;
+      row-gap: 15px;
+    }
+
+    * {
+      margin: 0;
+    }
+
+    &-link {
+      @include hover {
+        color: var(--color-accent);
+      }
+    }
+  }
+}
