@@ -7,8 +7,6 @@
   align-items: center;
   column-gap: 20px;
 
-  min-width: 320px;
-
   @include desktop {
     flex-direction: column;
     align-items: stretch;
